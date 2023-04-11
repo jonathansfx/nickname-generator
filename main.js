@@ -37,5 +37,8 @@ function btnClicked() {
       outputEl.innerHTML += `<p>${firstName} "${nameArray[i]}", ${lastName}</p>`;
     }
   } else if (selection == "removeIndex") {
+    let index = prompt("enter a nickname you wish to remove: ");
+    if (nameArray.indexOf(index)) {
+    }
   }
 }
