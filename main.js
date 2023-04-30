@@ -37,8 +37,15 @@ function btnClicked() {
       outputEl.innerHTML += `<p>${firstName} "${nameArray[i]}", ${lastName}</p>`;
     }
   } else if (selection == "removeIndex") {
-    let index = prompt("enter a nickname you wish to remove: ");
-    if (nameArray.indexOf(index)) {
+    let indexToRemove = prompt("Enter the index of the nickname to remove: ");
+    if (indexToRemove >= 0 && indexToRemove < nameArray.length) {
+      nameArray.splice(indexToRemove, 1);
+      outputEl.innerHTML = "";
+      for (let i = 0; i < nameArray.length; i++) {
+        outputEl.innerHTML += `<p>${firstName} "${nameArray[i]}", ${lastName}</p>`;
+      }
+    } else {
+      alert("Invalid index");
     }
   }
 }
